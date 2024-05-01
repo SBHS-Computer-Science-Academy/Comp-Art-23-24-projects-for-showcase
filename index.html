@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    
   <img src="images/CSA_logo.png" alt="CS Academy logo" id="logo">
   
   <!-- Remember to change the title in the head element as well! -->
@@ -19,58 +20,139 @@
   <p>Click an image below to see the project.</p>
   <!--Create a responsive grid with 4 columns. Add more rows as needed.-->
   <div class="container-fluid mt-3">
-    <div class="row">
-      <div class="col-md-3 p-3"">
-        <script type="text/javascript">
-          card = generateCard("Mason, Jack, and Cooper", "mason_jack_cooper.png", "platformer game", "https://replit.com/@ecs-23-24/Final-Project-Mason-Jack-Cooper");
-          document.currentScript.parentElement.innerHTML = card; //not elegant, but it works
-        </script>
-      </div>
-      <div class="col-md-3 p-3"">
-        <script type="text/javascript">
-          card = generateCard("Mason, Jack, and Cooper", "mason_jack_cooper.png", "platformer game", "https://replit.com/@ecs-23-24/Final-Project-Mason-Jack-Cooper");
-          document.currentScript.parentElement.innerHTML = card; //not elegant, but it works
-        </script>
-      </div>
-      <div class="col-md-3 p-3">
-        <script type="text/javascript">
-          card = generateCard("Mason, Jack, and Cooper", "mason_jack_cooper.png", "platformer game", "https://replit.com/@ecs-23-24/Final-Project-Mason-Jack-Cooper");
-          document.currentScript.parentElement.innerHTML = card; //not elegant, but it works
-        </script>
-      </div>
-      <div class="col-md-3 p-3">
-        <script type="text/javascript">
-          card = generateCard("Mason, Jack, and Cooper", "mason_jack_cooper.png", "platformer game", "https://replit.com/@ecs-23-24/Final-Project-Mason-Jack-Cooper");
-          document.currentScript.parentElement.innerHTML = card; //not elegant, but it works
-        </script>
-      </div>
+      <script type="text/javascript">
+          var names = [
+           "Aidan, Ethan, and Jonathan",
+           "Ben and Thatcher",
+           "Elicia and Fabricio",
+           "Jack and Stella",
+           "Emma",
+           "Evelyn",
+           "Finnley",
+           "Ider",
+           "Jay",
+           "JC",
+           "Julian",
+           "Lucy",
+           "Michael",
+           "Noah",
+           "Tino"
+          ];
+          var files = [
+            "AidanEthanAndJonathan",
+            "BenAndThatcher",
+            "EliciaAndFabricio",
+            "JackAndStella"
+           ];
+            
+            var idx = 0;
+            function makeCard() {
+                if (idx >= names.length) return;
+                var name = names[idx];
+                var file = name;
+                if (idx < files.length) file = files[idx];
+                var card = generateCard(name, file + ".png", "platformer game", file + "/index.html");
+                document.currentScript.parentElement.innerHTML = card; //not elegant, but it works
+                
+                idx++;
+            }
+          
+          /*for (var i = 0; i < names.length; i++) {
+              if (i % 4 == 0) {
+                  document.currentScript.parentElement.innerHTML = '<div class="row">'
+                  makeCard(i)
+              }
+          }
+           */
+      </script>
+      <div class="row">
+          <div class="col-md-3 p-3">
+            <script type="text/javascript">
+                makeCard();
+            </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
     </div>
-    <div class="row">
-      <div class="col-md-3 p-3">
-        <script type="text/javascript">
-          card = generateCard("Mason, Jack, and Cooper", "mason_jack_cooper.png", "platformer game", "https://replit.com/@ecs-23-24/Final-Project-Mason-Jack-Cooper");
-          document.currentScript.parentElement.innerHTML = card; //not elegant, but it works
-        </script>
+      <div class="row">
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
       </div>
-      <div class="col-md-3 p-3">
-        <script type="text/javascript">
-          card = generateCard("Mason, Jack, and Cooper", "mason_jack_cooper.png", "platformer game", "https://replit.com/@ecs-23-24/Final-Project-Mason-Jack-Cooper");
-          document.currentScript.parentElement.innerHTML = card; //not elegant, but it works
-        </script>
+      <div class="row">
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
       </div>
-      <div class="col-md-3 p-3">
-        <script type="text/javascript">
-          card = generateCard("Mason, Jack, and Cooper", "mason_jack_cooper.png", "platformer game", "https://replit.com/@ecs-23-24/Final-Project-Mason-Jack-Cooper");
-          document.currentScript.parentElement.innerHTML = card; //not elegant, but it works
-        </script>
+      <div class="row">
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
+          <div class="col-md-3 p-3">
+              <script type="text/javascript">
+                  makeCard();
+              </script>
+          </div>
       </div>
-      <div class="col-md-3 p-3">
-        <script type="text/javascript">
-          card = generateCard("Mason, Jack, and Cooper", "mason_jack_cooper.png", "platformer game", "https://replit.com/@ecs-23-24/Final-Project-Mason-Jack-Cooper");
-          document.currentScript.parentElement.innerHTML = card; //not elegant, but it works
-        </script>
-      </div>
-    </div>
   </div>
 </body>
 
