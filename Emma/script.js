@@ -9,13 +9,13 @@ let isPlaying = false
 let isJumping = false 
 let score = 0
 
-//function preload(){
-//  myFont = loadFont('Simple free.otf')
-//}
+function preload(){
+  myFont = loadFont('Simple free.otf')
+}
 
 function setup() {
   let myCanvas = createCanvas(900 , 900);
-//  textFont(myFont);
+  textFont(myFont);
   textSize(90)
   
 

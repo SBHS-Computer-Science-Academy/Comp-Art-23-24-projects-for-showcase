@@ -2,7 +2,7 @@ let circleX = 150;
 let circleY = 335;
 
 function preload (){
-//    song = loadSound('music.mp3');
+    song = loadSound('music.mp3');
   
 }
 function setup() {
@@ -11,7 +11,7 @@ function setup() {
   myCanvas.parent("myCanvas");
   createConsole("lines");
 
-//song.play();
+song.play();
   x = 40
   y = 20
   
