@@ -1,15 +1,3 @@
-function generateCard(names, imageName, altText, url)
-{
-  return '<div class="card text-center"> <div class="card-body"> <h5 class="card-title">'
-    + names  
-    + '</h5> <p class="card-text"> <a href="'
-    + url 
-    + '"> <img src="images/' 
-    + imageName 
-    + '" alt="'
-    + altText
-    + '" class="screenshots"> </a> </p> </div> </div>';
-}
 
 var names = [
     "Aidan, Ethan, and Jonathan",
@@ -47,6 +35,21 @@ var files = [
 var gridWidth = 4;
 var gridHtml = "";
 var idx = 0;
+
+makeGrid();
+
+function generateCard(names, imageName, altText, url)
+{
+    return '<div class="card text-center"> <div class="card-body"> <h5 class="card-title">'
+    + names
+    + '</h5> <p class="card-text"> <a href="'
+    + url
+    + '"> <img src="images/'
+    + imageName
+    + '" alt="'
+    + altText
+    + '" class="screenshots"> </a> </p> </div> </div>';
+}
 
 function makeCard() {
     if (idx >= names.length) return;
