@@ -1,3 +1,5 @@
+entrypoint = "script.js"
+
 hidden=[".config"]
 
 # hosting is currently hardcoded for this language
@@ -56,9 +58,8 @@ pattern = "**/{*.js,*.jsx,*.ts,*.tsx,*.mjs,*.cjs}"
   [languages.javascript.languageServer]
   start = ["typescript-language-server", "--stdio"]
 
-[gitHubImport]
-requiredFiles = [".replit", "replit.nix", ".config"]
-
+# TODO autocomplete relies on snippet support, which we don't advertise to LSP servers.
+# For now CSS autocomplete will use built-in codemirror, which is not perfect but good enough
 [languages.css]
 pattern = "**/{*.less,*.scss,*.css}"
   [languages.css.languageServer]

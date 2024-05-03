@@ -1,91 +1,60 @@
-//created by Johnston - Free to use in educational projects
-
-function mousePageNavigator(page){
-  if(forward.clicked() && page<5){
-    page+=1;
-  } else if(back.clicked() && page>0){
-    page-=1
+function gradientVertical(x,y,w,h,clrStart, clrEnd, steps=10){
+  for(let i = 0; i < steps; i++){
+    fill(lerpColor(clrStart,clrEnd,i/steps));
+    rect(x+(i*w/steps),y,w/steps,h)
   }
-  return page
 }
 
-function pageNavigation(page){
-  if(page<=0){
-    drawP0();
+function gradientHorizontal(x,y,w,h,clrStart, clrEnd, steps=10){
+  for(let i = 0; i < steps; i++){
+    fill(lerpColor(clrStart,clrEnd,i/steps));
+    rect(x,y+(i*h/steps),w,h/steps)
   }
-  else if(page==1){
-    drawP1();
-  }
-  else if(page==2){
-    drawP2();
-  }
-  else if(page==3){
-    drawP3();
-  }
-  else if(page==4){
-    drawP4();
-  }
-  else if(page>=5){
-    drawP5();
-  }
-  if(page > 0){
-    back.draw();
-  }
-  if(page<5){
-    forward.draw();
-  }
-  return page;
 }
 
-function keyPageNavigator(page){
-  if(key == 'ArrowRight' && page <5){
-    page+=1;
-  } 
-  if(key == 'ArrowLeft' && page >0){
-    page-=1;
+function gradientEllipse(x,y,w,h,clrStart, clrEnd, steps=10){
+  for(let i = 0; i < steps; i++){
+    fill(lerpColor(clrStart,clrEnd,i/steps));
+    ellipse(x,y,w-(i*w/steps),h-(i*w/steps))
   }
-  return page;
 }
 
-function isoVertTri(x, y, w = 100, h = 100) {
-  triangle(x, y, x + w, y, x + w / 2, y + h);
-
+function gradientRect(x,y,w,h,clrStart, clrEnd, steps=10){
+  for(let i = 0; i < steps; i++){
+    fill(lerpColor(clrStart,clrEnd,i/steps));
+    rect((x+(i*w/steps))/2,(y+(i*h/steps))/2,w-(i*w/steps),h-(i*h/steps))
+  }
 }
 
-function isoHorizTri(x, y, w = 100, h = 100) {
-  triangle(x, y, x, y + h, x + w, y + h / 2);
+function isoVertTri(x,y,w=100,h=100){
+  triangle(x,y,x+w,y,x+w/2,y+h);
+  
 }
 
-function rightTriangle(x, y, w = 100, h = 100) {
-  triangle(x, y, x + w, y, x, y + h);
+function isoHorizTri(x,y,w=100,h=100){
+  triangle(x,y,x,y+h,x+w,y+h/2);
 }
 
-function equilateral(x, y, s, orient = 'up') {
+function rightTriangle(x,y,w=100,h=100){
+  triangle(x,y,x+w,y,x,y+h);
+}
+
+
+//Optional extention
+function equilateral(x,y,s,orient = 'up'){
   if (orient == 'up') {
     //add code here for up triangle
-    triangle(x, y, x + s, y, x + s / 2, y - s * sqrt(3) / 2);
-  } else if (orient == 'down') {
+    triangle(x,y,x+s,y,x+s/2,y-s*sqrt(3)/2);
+  } else if (orient == 'down'){
     //add code here for down triangle
-    triangle(x, y, x + s, y, x + s / 2, y + s * sqrt(3) / 2);
-  } else if (orient == 'right') {
+    triangle(x,y,x+s,y,x+s/2,y+s*sqrt(3)/2);
+  } else if (orient == 'right'){
     //add code here for down triangle
-    triangle(x, y, x, y + s, x + s * sqrt(3) / 2, y + s / 2);
+    triangle(x,y,x,y+s,x+s*sqrt(3)/2,y+s/2);
   } else {
     //add code here for down triangle
-    triangle(x, y, x, y + s, x - s * sqrt(3) / 2, y + s / 2);
+    triangle(x,y,x,y+s,x-s*sqrt(3)/2,y+s/2);
   }
 }
 
-function drawVanishingLines(vanishingX, vanishingY, r = 15, clr = color(255, 0, 0), s = 1) {
-  push();
-  angleMode(DEGREES);
-  translate(vanishingX, vanishingY);
-  stroke(clr);
-  strokeWeight(s)
-  for (let a = 0; a < 360; a = a + r) {
-    line(0, -3 * width, 0, 0 + 3 * width);
-    rotate(r);
-  }
-  pop();
-}
 
