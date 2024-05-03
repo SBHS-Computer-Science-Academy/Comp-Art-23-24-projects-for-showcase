@@ -1,35 +1,32 @@
 
 var names = [
+    "Aaron",
     "Aidan, Ethan, and Jonathan",
     "Ben and Thatcher",
-    "Elicia and Fabricio",
-    "Jack and Stella",
-    "Aaron",
+    "Caje",
+    "Carlos, Kristian, and Lucas",
     "Dash",
+    "Devon, Luis, Max, and Noe",
+    "Elicia and Fabricio",
     "Emma",
     "Evan",
     "Evelyn",
     "Finnley",
-    "Gavin",
+    "Gavin and Jordan",
     "Ider",
-    "Jack",
+    "Jack and Ryler",
+    "Jack and Stella",
     "Jay",
     "JC",
     "Julian",
     "Kody",
+    "Liam, Milo, and Simon",
     "Lucy",
     "Melanie",
     "Michael",
     "Noah",
-    "Ryler",
     "Tino",
     "Vania"
-];
-var files = [
-    "AidanEthanAndJonathan",
-    "BenAndThatcher",
-    "EliciaAndFabricio",
-    "JackAndStella"
 ];
 
 var gridWidth = 4;
@@ -54,8 +51,7 @@ function generateCard(names, imageName, altText, url)
 function makeCard() {
     if (idx >= names.length) return;
     var name = names[idx];
-    var file = name;
-    if (idx < files.length) file = files[idx];
+    var file = name.replaceAll(" ","").replaceAll(",","").replace("and","");
     var card = generateCard(name, file + ".png", "platformer game", file + "/index.html");
     gridHtml += card; //not elegant, but it works
     
