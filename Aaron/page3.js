@@ -1,3 +1,0 @@
-function drawPage3(){
-  
-}
