@@ -7,6 +7,7 @@ var names = [
     "Caje",
     "Carlos, Kristian, and Lucas",
     "Dash",
+    "Diego",
     "Elicia and Fabricio",
     "Emma",
     "Evan",
@@ -29,6 +30,7 @@ var names = [
     "Michael",
     "Noah",
     "Oliver and Ryler",
+    "Sammy",
     "Tino",
     "Vania"
 ];

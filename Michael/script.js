@@ -1,5 +1,5 @@
 let player="X"
-let theWinner = ""
+let winner = ""
 class Box{
   constructor(x, y, w){
     this.x = x;
@@ -8,11 +8,18 @@ class Box{
     this.letter=" "
   }
   show(){
+    
     fill("white");
     square(this.x,this.y, this.w);
+    if (this.letter.includes("X")) rectGradient(this.x, this.y, this.w, this.w, "black", "white", "center");
+    if (this.letter.includes("O")) {
+      fill("red");
+      square(this.x, this.y, this.w);
+      circleGradient(this.x + this.w / 2, this.y + this.w / 2, this.w, "red", "white");
+      }
     fill ("black")
     textSize (this.w/2)
-      text(this.letter, this.x+this.w/2, this.y+this.w/2);
+    text(this.letter, this.x+this.w/2, this.y+this.w/2);
   }
   checkForClick(i,j){
     let hit = collidePointRect(mouseX, mouseY,this.x,this.y,this.w,this.w);;
@@ -22,7 +29,7 @@ class Box{
 
 
       
-      if(player=="X")player="O"
+      if(player=="X") player="O"
       else player="X"
     }
   }
@@ -33,7 +40,7 @@ class Box{
       makeBoard();
       player = 'X'
       loop()
-      theWinner=""
+      winner=""
       
     }
   }
@@ -71,8 +78,8 @@ class Box{
 }
 
 function setup() {
-  let myCanvas = createCanvas(1000, 800);
-  myCanvas.parent("myCanvas");
+  createCanvas(windowWidth, windowHeight);
+//  myCanvas.parent("myCanvas");
 
   //createConsole();
 
@@ -82,10 +89,11 @@ function setup() {
   frameRate(60); // prevent a p5.js bug that changes the framerate when you click
 }
 function draw() {
-  background("white");
+  rectGradient(0, 0, width, height/2, "red", "white");
+  rectGradient(0, height/2, width, height/2, "white", "black");
   
 
- drawBoard()
+  drawBoard()
 
   drawMouseLines("black")
 }
@@ -97,21 +105,19 @@ let board = [
 ];
 
 function makeBoard(){
-  let gridSize = 180
-
+  gridSize = min(width, height) / 4;
+    
   for(let i = 0; i < 3; i++){
     for(let j = 0; j < 3; j++) {
-        let x = gridSize * i;
-        let y = gridSize * j;
+        let x = gridSize * i + gridSize / 2;
+        let y = gridSize * j + gridSize / 2;
 
         board[i][j] = new Box(x, y, gridSize);
       }
   }
 }
 
-
-
-  function drawBoard() {
+function drawBoard() {
     for(let i = 0; i < 3; i++){
       for(let j = 0; j < 3; j++) {
 
@@ -124,20 +130,23 @@ function makeBoard(){
         
 }
 
-function showWinner(winner){
-
-  theWinner = winner
-  text(winner, 500, 600);
+function showWinner(theWinner){
+  winner = theWinner;
+  let winnerX = gridSize * 5;
+  let winnerY = height / 2;
+  
+  let winnerBox = new Box(winnerX, winnerY - gridSize, gridSize);
+  winnerBox.letter = winner + " wins!";
+  winnerBox.show();
   noLoop();
-  button = new Box(600, 600, 200);
-  button.letter = "Play Again";
-  button.show();
-  button.checkForRestart();
+  resetButton = new Box(winnerX, winnerY, gridSize);
+  resetButton.letter = "Play Again";
+  resetButton.show();
+  resetButton.checkForRestart();
 }
 
 function mousePressed() {
-  if (theWinner != "") {
-    button = new Box(600, 600, 200);
-    button.checkForRestart();
+  if (winner != "") {
+    resetButton.checkForRestart();
   }
 }
