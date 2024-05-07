@@ -64,9 +64,9 @@ noStroke()
 function animateMud() {
 
     if (isPlaying) {
-        mudSpeed = 18 * (score/10 + 1 );
+        mudSpeed = 18 * (score/20 + 1);
         mudX -=mudSpeed;
-        text("Mud speed: " + mudSpeed,500,820);
+        text("Mud speed: " + mudSpeed.toFixed(1),500,820);
     }
         
   if (mudX < -150) {
