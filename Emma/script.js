@@ -8,6 +8,7 @@ let myFont;
 let isPlaying = false 
 let isJumping = false 
 let score = 0
+let mudSpeed = 18
 
 function preload(){
   myFont = loadFont('Simple free.otf')
@@ -63,7 +64,7 @@ noStroke()
 function animateMud() {
 
     if (isPlaying) {
-        let mudSpeed = 18 * (score/10 + 1 );
+        mudSpeed = 18 * (score/10 + 1 );
         mudX -=mudSpeed;
         text("Mud speed: " + mudSpeed,500,820);
     }
