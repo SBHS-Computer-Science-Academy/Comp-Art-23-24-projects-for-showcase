@@ -27,11 +27,11 @@ noStroke();
 }
 
 function draw() {
-
-  if (page == 0) drawPage0();
-  if (page == 1) drawPage1();
-  if (page == 2) drawPage2();
-  if (page == 3) drawPage3();
+//
+//  if (page == 0) drawPage0();
+//  if (page == 1) drawPage1();
+//  if (page == 2) drawPage2();
+//  if (page == 3) drawPage3();
   
   rectGradient(0, 0, width, 800, "deepskyblue", 'dodgerblue'  )
   
@@ -62,7 +62,7 @@ function draw() {
   hair();
   eye();
   
-  displayPage(page);
+//  displayPage(page);
   
  // drawMouseLines("black");
 }

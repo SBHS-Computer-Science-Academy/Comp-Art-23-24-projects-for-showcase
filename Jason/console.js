@@ -49,8 +49,8 @@ function keyPressed() {
   if (!consoleIsOn) return;
 
   if (keyCode === BACKSPACE || keyCode === DELETE) {
-      px.pop();
-      py.pop();
+    px.pop();
+    py.pop();
   }
 
   else {

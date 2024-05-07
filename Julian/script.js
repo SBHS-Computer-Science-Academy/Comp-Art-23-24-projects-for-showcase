@@ -111,11 +111,11 @@ function setup() {
   // let numBlocks = 10;
   spikeArray = [];
   spikeArray.push(new Spike(23,0,70,290,134,0));
-   spikeArray.push(new Spike(18,800,71,463,145,799))
-  spikeArray.push(new Spike(328,1,368,111,414,0))
-  spikeArray.push(new Spike(323,798,369,251,445,789))
-  spikeArray.push(new Spike(608,799,640,693,676,799))
-  spikeArray.push(new Spike(586,1,640,532,700,0))
+   spikeArray.push(new Spike(18,800,71,500,145,800))
+  spikeArray.push(new Spike(328,0,368,111,414,0))
+  spikeArray.push(new Spike(323,800,369,301,445,800))
+  spikeArray.push(new Spike(608,800,640,693,676,800))
+  spikeArray.push(new Spike(586,0,640,480,700,0))
   
 }
 

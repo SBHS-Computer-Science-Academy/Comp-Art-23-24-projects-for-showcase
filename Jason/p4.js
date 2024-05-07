@@ -1,3 +1,5 @@
 function drawP4(){
-  background('yellow');
+  image(china, 0, 0, 1000, 800);
+  airplane.drawAirplane();
+  airplane.moveAirplane();
 }

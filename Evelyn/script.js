@@ -15,7 +15,7 @@ function setup() {
 function draw() {
   background("white");
 
-//  image(helloKitty,0,0);
+  image(helloKitty,0,0);
 
   drawMouseLines()
   noFill()

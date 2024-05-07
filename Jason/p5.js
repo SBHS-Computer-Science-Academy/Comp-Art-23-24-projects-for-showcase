@@ -1,3 +1,5 @@
 function drawP5(){
-  background('lightblue');
+  image(santabarbara, 0, 0, 1000, 800);
+  airplane.drawAirplane();
+  airplane.moveAirplane();
 }
