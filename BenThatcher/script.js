@@ -2,11 +2,10 @@ let isPlaying=false
 let isGameOver = false
 class Paintball{
 constructor(){
-  this.x = player.gunVector.x
-    this.y = player.gunVector.y
+  this.x = player.paintballGunVector.x
+    this.y = player.paintballGunVector.y
 
-    this.width = 5
-    this.height = 5
+    this.width = 10
     this.clr = "yellow"
     this.angle=player.angle
   
@@ -121,7 +120,7 @@ class Player {
     this.height = 25
     this.clr = clr
     this.speed = 10
-    this.gunVector = null
+    this.paintballGunVector = null
     this.angle = null
   }
 
@@ -135,18 +134,18 @@ class Player {
     fill(this.clr);
     drawPlayer()
 
-    let gunX=91
-    let gunY=222
+    let paintballGunX=91
+    let paintballGunY=222
 
-    this.gunVector=createVector(this.x - personX + gunX,this.y - personY + gunY)
+    this.paintballGunVector=createVector(this.x - personX + paintballGunX,this.y - personY + paintballGunY)
     let mouseVector=createVector(mouseX,mouseY)
-    this.angle=atan2((mouseVector.y - this.gunVector.y),mouseVector.x - this.gunVector.x)
+    this.angle=atan2((mouseVector.y - this.paintballGunVector.y),mouseVector.x - this.paintballGunVector.x)
     pop()
     push()
-    translate(this.gunVector)
+    translate(this.paintballGunVector)
     rotate(this.angle)
-    translate(-gunX,-gunY);
-    if (!isGameOver&&personArray.length!=0) drawGun()
+    translate(-paintballGunX, -paintballGunY);
+    if (!isGameOver&&personArray.length!=0) drawPaintballGun()
     function drawPlayer() {
 
       // fill("black");
@@ -171,7 +170,7 @@ class Player {
     }
    
 
-      function drawGun() {
+      function drawPaintballGun() {
          fill("black");
         beginShape();
         vertex(92, 223);
@@ -182,6 +181,8 @@ class Player {
         vertex(89, 236);
         vertex(91, 222);
         endShape();
+          fill("orange");
+          square(117, 223, 5);
       
     }
     pop();
@@ -268,7 +269,7 @@ if (personArray.length==0){
 }
   else {
     textSize(100)
-    text("Start",470,346)
+    text("Zombie Paintball!",470,346)
     
   }
 

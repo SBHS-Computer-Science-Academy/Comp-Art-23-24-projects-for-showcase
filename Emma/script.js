@@ -62,10 +62,15 @@ noStroke()
 
 function animateMud() {
 
-  if (isPlaying) mudX -= 18 * (score/100 + 1 );
+    if (isPlaying) {
+        let mudSpeed = 18 * (score/10 + 1 );
+        mudX -=mudSpeed;
+        text("Mud speed: " + mudSpeed,500,820);
+    }
+        
   if (mudX < -150) {
-    mudX = width + 150
-    score += 1 
+    mudX = width + 150 + mudSpeed;
+    score += 1
   }
     drawMud(mudX, 573);
 }
@@ -204,7 +209,7 @@ function collideWithMud() {
     noStroke()
     textSize(80 );
     fill(247, 70, 54)
-    text("Game Over ",500,750)
+    text("Game Over ",500,820)
     stroke("black")
   }
   
@@ -535,7 +540,7 @@ function drawPiggame(){
   fill(247, 70, 54)
   
   text("Pig Jump Game",300,100)
-  text("score: " + score, 500,820) 
+  text("score: " + score, 500,750)
   
 }
 

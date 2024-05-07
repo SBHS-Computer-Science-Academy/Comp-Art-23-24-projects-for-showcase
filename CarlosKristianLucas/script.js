@@ -9,7 +9,7 @@ let total = 0
 //G1 = new G(100, 225, 250, 150, 300, 400   );
   hPuck = new Sprite(500, 400, 50, 'dynamic');
  
-    hPuck.stroke= 'blue'
+    hPuck.stroke= 'aqua'
     hPuck.color= (5,5,5, 0)
    hPuck.direction =180;
   hPuck.speed = 10;
